@@ -1,0 +1,217 @@
+.gooey-nav {
+  position: fixed;
+  top: 32px;
+  right: 40px;
+  z-index: 500;
+  pointer-events: none;
+}
+
+.gooey-nav__inner {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+  overflow: visible;
+}
+
+.gooey-nav__item {
+  position: relative;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+}
+
+.gooey-nav__item:hover,
+.gooey-nav__item:focus-visible,
+.gooey-nav__item--active {
+  color: var(--color-bg);
+}
+
+.gooey-nav__pill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-width: 48px;
+  background: var(--color-fg);
+  border-radius: 999px;
+  transform: translate3d(0, 0, 0) scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-med);
+  pointer-events: none;
+}
+
+.gooey-nav__particle-layer {
+  position: absolute;
+  inset: -48px;
+  pointer-events: none;
+  filter: blur(12px);
+}
+
+.gooey-nav__particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-fg);
+  opacity: 0;
+  transform: translate3d(0, 0, 0) scale(0.4);
+}
+
+.marquee {
+  position: relative;
+  display: flex;
+  gap: var(--marquee-gap, 48px);
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee__item {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+.blur-text {
+  position: relative;
+  display: inline-flex;
+  filter: blur(0);
+  transition: filter var(--transition-slow);
+}
+
+.blur-text span {
+  display: inline-block;
+  filter: blur(var(--blur-max, 3px));
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    filter var(--blur-duration, 600ms) ease,
+    opacity var(--blur-duration, 600ms) ease,
+    transform var(--blur-duration, 600ms) ease;
+  transition-delay: calc(var(--i, 0) * 24ms);
+}
+
+.blur-text.is-visible span {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.blur-text--hovered {
+  filter: blur(var(--blur-hover, 0px));
+}
+
+.blur-text--hovered span {
+  filter: blur(calc(max(var(--blur-hover, 0) - 1, 0) * 1px));
+}
+
+.project-card__link-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+}
+
+.flowing-menu__items {
+  position: absolute;
+  inset: 0;
+}
+
+.flowing-menu__item {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transform: translate3d(-50%, -50%, 0);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.flowing-menu__link {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  pointer-events: auto;
+}
+
+.flowing-menu__icon {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  background: var(--color-fg);
+}
+
+.flowing-menu__text {
+  position: absolute;
+  bottom: -1.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.flowing-menu__link:hover .flowing-menu__text,
+.flowing-menu__link:focus-visible .flowing-menu__text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flowing-menu__link:hover,
+.flowing-menu__link:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .gooey-nav {
+    top: 24px;
+    right: 16px;
+  }
+
+  .gooey-nav__inner {
+    gap: 1rem;
+  }
+}
+
+.flowing-menu--static .flowing-menu__items {
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.flowing-menu--static .flowing-menu__item {
+  position: relative;
+  transform: none;
+  opacity: 1;
+  width: 72px;
+  height: 72px;
+}
