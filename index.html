@@ -1,134 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Liew Cheah Ming — AI projects and works.">
-  <title>Liew Cheah Ming — Portfolio</title>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-</head>
-<body>
-  <a class="skip-link" href="#home">Skip to main content</a>
-  <div id="light-rays" aria-hidden="true"></div>
-
-  <nav class="gooey-nav" aria-label="Main">
-    <div class="gooey-nav__inner" data-gooey-nav>
-      <button type="button" class="gooey-nav__item" data-target="home">Home</button>
-      <button type="button" class="gooey-nav__item" data-target="about">About</button>
-      <button type="button" class="gooey-nav__item" data-target="works">Works</button>
-      <button type="button" class="gooey-nav__item" data-target="contact">Contact</button>
-      <div class="gooey-nav__pill" data-gooey-pill aria-hidden="true"></div>
-      <div class="gooey-nav__particle-layer" aria-hidden="true"></div>
-    </div>
-  </nav>
-
-  <div class="scrollbar" data-scrollbar aria-hidden="true">
-    <div class="scrollbar__track">
-      <div class="scrollbar__thumb"></div>
-    </div>
-  </div>
-
-  <main class="page">
-    <section id="home" class="section section--home" data-section>
-      <div class="section__inner hero" data-scroll-float>
-        <div class="hero__content">
-          <p class="hero__welcome" data-blur-text>Welcome to my portfolio</p>
-          <h1 class="hero__name" data-hero-name>Liew Cheah Ming</h1>
-          <p class="hero__headline" data-hero-headline>Exploring intelligent systems and thoughtful product experiences.</p>
-          <div class="hero__actions">
-            <a class="hero__cta" href="#works">Explore Works</a>
-            <a class="hero__cta hero__cta--ghost" href="#contact">Contact</a>
-          </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <meta name="description" content="" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/gooeyNav.css" />
+    <link rel="stylesheet" href="assets/css/infiniteMenu.css" />
+    <link rel="stylesheet" href="assets/css/lightRays.css" />
+    <link rel="stylesheet" href="assets/css/flowingMenu.css" />
+  </head>
+  <body>
+    <canvas class="light-rays-canvas" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <div class="gooey-nav-container">
+        <nav class="gooey-nav" aria-label="Primary navigation">
+          <ul class="gooey-nav__list">
+            <li class="gooey-nav__item">
+              <a class="gooey-nav__link" href="#home" data-section="home">HOME</a>
+            </li>
+            <li class="gooey-nav__item">
+              <a class="gooey-nav__link" href="#about" data-section="about">ABOUT</a>
+            </li>
+            <li class="gooey-nav__item">
+              <a class="gooey-nav__link" href="#works" data-section="works">WORKS</a>
+            </li>
+            <li class="gooey-nav__item">
+              <a class="gooey-nav__link" href="#contact" data-section="contact">CONTACT</a>
+            </li>
+          </ul>
+          <div class="gooey-nav__effect gooey-nav__effect--pill" aria-hidden="true"></div>
+          <div class="gooey-nav__effect gooey-nav__effect--particles" aria-hidden="true"></div>
+        </nav>
+      </div>
+    </header>
+    <main class="site-main">
+      <section id="home" class="section section--home" aria-labelledby="home-title">
+        <div class="section__inner">
+          <h1 id="home-title" class="hero-blur" data-config-text="hero.headline"></h1>
         </div>
-        <div class="hero__media">
-          <figure class="hero__portrait" data-scroll-float-item>
-            <img src="assets/images/profile/myimage.png" alt="Portrait of Liew Cheah Ming" loading="lazy">
+      </section>
+      <section id="about" class="section section--about" aria-labelledby="about-title">
+        <div class="section__inner section__inner--about">
+          <h2 id="about-title" class="section-title">About Me</h2>
+          <figure class="profile-frame">
+            <img
+              class="profile-img"
+              src=""
+              alt="Portrait of Liew Cheah Ming"
+              data-config-src="about.image"
+              loading="lazy"
+            />
           </figure>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="section section--about" data-section>
-      <div class="section__inner about">
-        <header class="section__header">
-          <h2 class="section__title">About</h2>
-          <p class="section__tagline">Building reliable interfaces for ambitious ML experiences.</p>
-        </header>
-        <div class="about__content" data-about-content>
-          <p>Driven by curiosity and a love for clean, expressive code, I explore how data and design intersect to deliver meaningful solutions.</p>
-          <p>From optimizing pipelines to refining product interfaces, I enjoy bridging research and execution for production-ready results.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="works" class="section section--works" data-section>
-      <div class="section__inner works">
-        <header class="section__header">
-          <h2 class="section__title">Featured Works</h2>
-          <p class="section__tagline">Selected explorations and shipped projects.</p>
-        </header>
-        <div class="works__marquee" data-infinite-menu aria-hidden="true">
-          <div class="marquee" data-marquee-track></div>
-        </div>
-        <div class="works__grid" data-project-grid>
-          <!-- Project cards injected by JS -->
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section--contact" data-section>
-      <div class="section__inner contact">
-        <header class="section__header">
-          <h2 class="section__title">Get in Touch</h2>
-          <p class="section__tagline">Let’s collaborate on thoughtful interfaces and intelligent systems.</p>
-        </header>
-        <div class="contact__flow" data-flowing-menu>
-          <div class="flowing-menu__center">
-            <span class="flowing-menu__label">Hover or tap to reveal</span>
+      </section>
+      <section id="works" class="section section--works" aria-labelledby="works-title">
+        <div class="section__inner">
+          <h2 id="works-title" class="section-title sr-only">Featured Works</h2>
+          <div class="infinite-menu" data-infinite-menu>
+            <div class="infinite-track" aria-hidden="true"></div>
           </div>
-          <ul class="flowing-menu__items" data-flowing-menu-items aria-label="Social links">
-            <!-- Social links injected by JS -->
-          </ul>
         </div>
-        <div class="contact__note">
-          <p>Prefer email? Reach out anytime at <a class="contact__link" href="mailto:">liew@example.com</a>.</p>
+      </section>
+      <section id="contact" class="section section--contact" aria-labelledby="contact-title">
+        <div class="section__inner section__inner--contact">
+          <h2 id="contact-title" class="section-title">Get In Touch</h2>
+          <ul class="flowing-menu" data-flowing-menu></ul>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <template id="project-card-template">
-    <article class="project-card" data-scroll-float-item>
-      <div class="project-card__media">
-        <img src="" alt="" loading="lazy">
-      </div>
-      <div class="project-card__body">
-        <div class="project-card__meta">
-          <span class="project-card__date"></span>
-          <div class="project-card__tags"></div>
-        </div>
-        <h3 class="project-card__title"></h3>
-        <p class="project-card__desc"></p>
-        <div class="project-card__links"></div>
-      </div>
-    </article>
-  </template>
-
-  <template id="flowing-menu-item-template">
-    <li class="flowing-menu__item">
-      <a href="" target="_blank" rel="noopener" class="flowing-menu__link">
-        <span class="flowing-menu__icon"></span>
-        <span class="flowing-menu__text"></span>
-      </a>
-    </li>
-  </template>
-
-  <script type="module" src="js/main.js"></script>
-</body>
+      </section>
+    </main>
+    <script type="module" src="assets/js/usage.js"></script>
+  </body>
 </html>

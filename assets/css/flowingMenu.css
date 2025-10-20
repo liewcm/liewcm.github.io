@@ -1,0 +1,44 @@
+:root {
+  --flow-activation-radius: 120px;
+  --flow-icon-fade-ms: 220;
+  --flow-drift: 0.15;
+  --flow-reactiveness: 0.22;
+  --flow-item-spacing: 18px;
+}
+
+.flowing-menu {
+  gap: var(--flow-item-spacing);
+}
+
+.flowing-item {
+  transform: translate3d(0, calc(var(--flow-offset, 0) * 1px), 0);
+  transition: transform calc(var(--flow-icon-fade-ms) * 1ms) ease;
+}
+
+.flowing-icon {
+  opacity: 0;
+  transform: translate3d(-16px, 0, 0);
+  transition:
+    opacity calc(var(--flow-icon-fade-ms) * 1ms) ease,
+    transform calc(var(--flow-icon-fade-ms) * 1ms) ease;
+}
+
+.flowing-item.is-visible .flowing-icon,
+.flowing-menu.is-touch .flowing-icon {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.flowing-item.is-visible .flowing-link,
+.flowing-menu.is-touch .flowing-link {
+  pointer-events: auto;
+  color: rgba(255, 255, 255, 1);
+}
+
+.flowing-menu.is-touch .flowing-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+html.reduced-motion .flowing-item {
+  transition: none;
+}

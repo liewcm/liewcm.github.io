@@ -1,88 +1,37 @@
 {
   "site": {
-    "title": "Liew Cheah Ming — Portfolio",
-    "description": "Portfolio of Liew Cheah Ming — AI projects and works."
+    "title": "Liew Cheah Ming - Portfolio",
+    "description": "Portfolio of Liew Cheah Ming - AI projects and works."
   },
   "hero": {
-    "name": "Liew Cheah Ming",
-    "image": "assets/images/profile/myimage.png",
-    "headline": "Exploring intelligent systems and thoughtful product experiences."
+    "headline": "Welcome To My Portfolio"
   },
   "about": {
-    "summary": [
-      "I build data-driven and ML-powered solutions focused on delightful, intuitive user outcomes.",
-      "My current interests span reinforcement learning, optimization, and resilient web experiences across devices."
-    ]
+    "image": "assets/images/profile/myimage.png"
   },
-  "infiniteMenu": {
+  "works": {
     "items": [
-      "Python",
-      "PyTorch",
-      "Optimization",
-      "Reinforcement Learning",
-      "Computer Vision",
-      "React",
-      "Git",
-      "Docker",
-      "SQL",
-      "Arduino",
-      "AI"
+      { "image": "assets/images/projects/1.jpg", "url": "" },
+      { "image": "assets/images/projects/2.jpg", "url": "" },
+      { "image": "assets/images/projects/3.jpg", "url": "" },
+      { "image": "assets/images/projects/4.jpg", "url": "" },
+      { "image": "assets/images/projects/5.jpg", "url": "" },
+      { "image": "assets/images/projects/6.jpg", "url": "" }
     ]
   },
-  "socials": [
-    { "name": "GitHub", "icon": "github", "image": "assets/icons/github.svg", "url": "" },
-    { "name": "LinkedIn", "icon": "linkedin", "image": "assets/icons/linkedin.svg", "url": "" },
-    { "name": "Email", "icon": "mail", "image": "assets/icons/mail.svg", "url": "" },
-    { "name": "Instagram", "icon": "instagram", "image": "assets/icons/instagram.svg", "url": "" }
-  ],
-  "projects": [
-    {
-      "title": "Project One",
-      "desc": "Short placeholder description highlighting the outcome and tech stack.",
-      "tags": ["AI", "NLP"],
-      "image": "assets/images/projects/placeholder-1.jpg",
-      "links": { "github": "", "demo": "" },
-      "date": "2025"
+  "contact": {
+    "order": ["LinkedIn", "GitHub", "Email", "Instagram"],
+    "links": {
+      "LinkedIn": "",
+      "GitHub": "",
+      "Email": "",
+      "Instagram": ""
     },
-    {
-      "title": "Project Two",
-      "desc": "Another placeholder summary showcasing a measurable impact for users.",
-      "tags": ["Optimization", "Python"],
-      "image": "assets/images/projects/placeholder-2.jpg",
-      "links": { "github": "", "demo": "" },
-      "date": "2024"
-    },
-    {
-      "title": "Project Three",
-      "desc": "Describe an ML pipeline or experiment, calling out key insights learned.",
-      "tags": ["ML", "Experimentation"],
-      "image": "assets/images/projects/placeholder-3.jpg",
-      "links": { "github": "", "demo": "" },
-      "date": "2024"
-    },
-    {
-      "title": "Project Four",
-      "desc": "Placeholder card for a robotics or embedded project featuring Arduino.",
-      "tags": ["Robotics", "Arduino"],
-      "image": "assets/images/projects/placeholder-4.jpg",
-      "links": { "github": "", "demo": "" },
-      "date": "2023"
-    },
-    {
-      "title": "Project Five",
-      "desc": "Highlight a design-to-deployment case study with a focus on UX.",
-      "tags": ["UX", "Full Stack"],
-      "image": "assets/images/projects/placeholder-5.jpg",
-      "links": { "github": "", "demo": "" },
-      "date": "2023"
-    },
-    {
-      "title": "Project Six",
-      "desc": "Showcase collaboration and iteration on a team-based AI project.",
-      "tags": ["Collaboration", "AI"],
-      "image": "assets/images/projects/placeholder-6.jpg",
-      "links": { "github": "", "demo": "" },
-      "date": "2022"
+    "icons": {
+      "LinkedIn": "assets/images/icons/linkedin.png",
+      "GitHub": "assets/images/icons/github.png",
+      "Email": "assets/images/icons/email.png",
+      "Instagram": "assets/images/icons/instagram.png"
     }
-  ]
+  }
 }
