@@ -1,0 +1,68 @@
+{
+  "projects": [
+    {
+      "src": "projects/1.png",
+      "href": "https://github.com/liewcm/ComputerVisionProject",
+      "title": "CV Project",
+      "description": "Image classification Project."
+    },
+    {
+      "src": "projects/2.png",
+      "href": "https://github.com/liewcm/BigDataProject",
+      "title": "Big Data Project",
+      "description": "Predict and Analyse Data Project."
+    },
+    {
+      "src": "projects/3.png",
+      "href": "https://github.com/liewcm/ReinforcementLearningProject",
+      "title": "RL Project",
+      "description": "Pickleball Agent Project."
+    },
+    {
+      "src": "projects/4.png",
+      "href": "https://github.com/liewcm/AdvancedMachineLearningProject",
+      "title": "AML Project",
+      "description": "Speech to Text Recognition Project."
+    },
+    {
+      "src": "projects/5.png",
+      "href": "https://github.com/liewcm/DeepLearningProject",
+      "title": "DL Project",
+      "description": "Handwritten Digit Recognition Project."
+    },
+    {
+      "src": "projects/6.png",
+      "href": "https://github.com/liewcm/MatrixFinalProject",
+      "title": "Matrix Project",
+      "description": "Age Estimation Project."
+    },
+    {
+      "src": "projects/7.png",
+      "href": "https://github.com/liewcm/FinalYearProject",
+      "title": "Final Year Project",
+      "description": "Industrial Planning Optimizer Project"
+    }
+  ],
+  "contacts": [
+    {
+      "label": "LinkedIn",
+      "icon": "icons/linkedin.png",
+      "href": "https://www.linkedin.com/in/liew-cm-083895234/"
+    },
+    {
+      "label": "Github",
+      "icon": "icons/github.png",
+      "href": "https://github.com/liewcm"
+    },
+    {
+      "label": "Email",
+      "icon": "icons/email.png",
+      "href": "https://mail.google.com/mail/?view=cm&fs=1&to=liewcheahming9109@gmail.com"
+    },
+    {
+      "label": "Instagram",
+      "icon": "icons/instagram.png",
+      "href": "https://www.instagram.com/liewcheahming/"
+    }
+  ]
+}
