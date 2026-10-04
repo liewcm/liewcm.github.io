@@ -115,9 +115,74 @@
   transition: 0.1s ease;
 }
 
+/* Narrower screens: keep the title and description, sized to fit beside the globe */
 @media (max-width: 1500px) {
+  .face-title {
+    left: 0;
+    max-width: 28%;
+    font-size: clamp(1.75rem, 3.2vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .face-title.active {
+    transform: translate(0, -50%);
+  }
+
+  .face-title.inactive {
+    transform: translate(-10%, -50%);
+  }
+
+  .face-description {
+    right: 0;
+    max-width: 24%;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.4;
+  }
+
+  .face-description.active {
+    transform: translate(0, -50%);
+  }
+
+  .face-description.inactive {
+    transform: translate(10%, -50%);
+  }
+}
+
+/* Phones and small tablets: no room beside the globe, so title above it and description below */
+@media (max-width: 900px) {
   .face-title,
   .face-description {
-    display: none;
+    left: 50%;
+    right: auto;
+    max-width: 90%;
+    width: max-content;
+    text-align: center;
+  }
+
+  .face-title {
+    top: 0;
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+  }
+
+  .face-title.active {
+    transform: translate(-50%, 0);
+  }
+
+  .face-title.inactive {
+    transform: translate(-50%, -8px);
+  }
+
+  .face-description {
+    top: auto;
+    bottom: 0;
+    font-size: 1rem;
+  }
+
+  .face-description.active {
+    transform: translate(-50%, 0);
+  }
+
+  .face-description.inactive {
+    transform: translate(-50%, 8px);
   }
 }
