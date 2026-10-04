@@ -575,6 +575,7 @@ class InfiniteGridMenu {
   #deltaTime = 0;
   #deltaFrames = 0;
   #frames = 0;
+  #rafId = null;
 
   camera = {
     matrix: mat4.create(),
@@ -625,7 +626,20 @@ class InfiniteGridMenu {
     this.#animate(this.#deltaTime);
     this.#render();
 
-    requestAnimationFrame(t => this.run(t));
+    this.#rafId = requestAnimationFrame(t => this.run(t));
+  }
+
+  start() {
+    if (this.#rafId === null) {
+      this.#rafId = requestAnimationFrame(t => this.run(t));
+    }
+  }
+
+  stop() {
+    if (this.#rafId !== null) {
+      cancelAnimationFrame(this.#rafId);
+      this.#rafId = null;
+    }
   }
 
   #init(onInit) {
@@ -937,8 +951,23 @@ export default function InfiniteMenu({ items = [] }) {
     window.addEventListener('resize', handleResize);
     handleResize();
 
+    // Only render while the canvas is on screen, so scrolling elsewhere doesn't compete with WebGL
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      if (!sketch) return;
+      if (entry.isIntersecting) {
+        sketch.start();
+      } else {
+        sketch.stop();
+      }
+    });
+    if (canvas) {
+      visibilityObserver.observe(canvas);
+    }
+
     return () => {
       window.removeEventListener('resize', handleResize);
+      visibilityObserver.disconnect();
+      sketch?.stop();
     };
   }, [items]);
 

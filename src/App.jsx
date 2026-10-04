@@ -14,6 +14,7 @@ const ScrollablePages = () => {
   const worksRef = useRef(null);
   const contactRef = useRef(null);
   const isProgrammaticScroll = useRef(false);
+  const pathSetByScroll = useRef(null);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,6 +39,12 @@ const ScrollablePages = () => {
   }, [sections]);
 
   useEffect(() => {
+    // The user scrolled here themselves; only nav clicks and direct links should auto-scroll
+    if (pathSetByScroll.current === location.pathname) {
+      pathSetByScroll.current = null;
+      return undefined;
+    }
+
     const key = location.pathname === '/' ? 'home' : location.pathname.replace('/', '');
     const targetSection = sectionMap[key] ?? sectionMap.home;
     if (targetSection?.ref.current) {
@@ -71,6 +78,7 @@ const ScrollablePages = () => {
         if (!activeSection) return;
 
         if (location.pathname !== activeSection.path) {
+          pathSetByScroll.current = activeSection.path;
           navigate(activeSection.path, { replace: true });
         }
       },
