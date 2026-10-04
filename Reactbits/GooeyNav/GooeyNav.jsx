@@ -204,6 +204,15 @@ const GooeyNav = ({
       </nav>
       <span className="effect filter" ref={filterRef} />
       <span className="effect text" ref={textRef} />
+      {/* Goo via alpha threshold, so it works over any background (the old blur+contrast
+          trick needed a black backing that showed up over the Home light rays) */}
+      <svg className="gooey-nav-defs" aria-hidden="true" focusable="false">
+        <filter id="gooey-nav-goo" filterUnits="userSpaceOnUse" x="-200" y="-200" width="600" height="450">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+          <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo" />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </svg>
     </div>
   );
 };
