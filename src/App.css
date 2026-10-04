@@ -67,12 +67,8 @@
   color: #fdfdfd;
 }
 
-.home-light-rays {
-  position: absolute;
-  inset: 0;
+.home-fluid {
   z-index: 0;
-  pointer-events: none;
-  opacity: 0.85;
 }
 
 .about-page {
