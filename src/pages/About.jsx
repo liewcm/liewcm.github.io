@@ -3,10 +3,11 @@ import profileImage from '../assets/images/profile/myimage.png';
 
 const aboutLines = [
   'Hi!',
-  'My name is Liew Cheah Ming,',
-  'I am a year 4 Artificial',
-  'Intelligence student studying in',
-  'Xiamen University Malaysia'
+  "I'm Liew Cheah Ming.",
+  'I graduated from',
+  'Xiamen University Malaysia',
+  'with a Bachelor of Engineering',
+  'in Artificial Intelligence.'
 ];
 
 const About = () => {
